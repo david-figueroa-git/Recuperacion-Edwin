@@ -6,6 +6,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
+import modelo.EmpleadoComercial;
 /**
  * La ventana del sistema. Solo muestra información y captura lo que el usuario hace;
  * todas las decisiones se las delega al controlador.
@@ -52,7 +53,7 @@ public class VentanaEmpleados extends JFrame {
         campos.add(txtSalario);
         campos.add(new JLabel("Tipo de empleado:"));
         campos.add(cmbTipo);
-        campos.add(new JLabel("Bonificación (solo administrativos):"));
+        campos.add(new JLabel("Bonificación / Comision %: "));
         campos.add(txtBonificacion);
         txtBonificacion.setEnabled(false); // arranca en "Operativo"
 // Array de botones + ciclo for-each para agregarlos todos al panel
