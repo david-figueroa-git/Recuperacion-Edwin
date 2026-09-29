@@ -57,12 +57,29 @@ public class EmpleadoControlador {
         if (cedula.isEmpty() || nombre.isEmpty()) {
             return "La cédula y el nombre son obligatorios.";
         }
+
         if (!esNumeroValido(salario)) {
             return "El salario debe ser un número positivo (sin puntos de miles).";
         }
-        if (tipo.equals("Administrativo") && !esNumeroValido(bonificacion)) {
+
+        if (tipo.equals("Administrativo")
+                && !esNumeroValido(bonificacion)) {
             return "La bonificación debe ser un número positivo.";
         }
+
+        if (tipo.equals("Comercial")) {
+
+            if (!esNumeroValido(bonificacion)) {
+                return "La comisión debe ser un número positivo.";
+            }
+
+            double porcentaje = Double.parseDouble(bonificacion);
+
+            if (porcentaje > 50) {
+                return "La comisión no puede ser mayor al 50%.";
+            }
+        }
+
         return null;
     }
     // Fábrica de empleados: decide qué clase instanciar según el tipo
