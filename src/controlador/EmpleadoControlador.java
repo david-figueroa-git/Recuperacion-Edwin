@@ -3,13 +3,14 @@ import modelo.EmpleadoAdministrativo;
 import modelo.EmpleadoBase;
 import modelo.RepositorioEmpleados;
 import java.util.ArrayList;
+import modelo.EmpleadoComercial;
 /**
  * El "cerebro" del sistema: recibe lo que el usuario escribe en la ventana,
  * lo valida y decide qué hacer con los datos.
  */
 public class EmpleadoControlador {
     // Array: lista FIJA de tipos de empleado (no cambia mientras corre el programa)
-    public static final String[] TIPOS_EMPLEADO = {"Operativo", "Administrativo"};
+    public static final String[] TIPOS_EMPLEADO = {"Operativo", "Administrativo", "Comercial"};
     private final RepositorioEmpleados repositorio;
     private final ArrayList<String> historial; // ArrayList: crece con cada operación
     public EmpleadoControlador() {
